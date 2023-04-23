@@ -10,7 +10,7 @@ const rateLimiter = require("express-rate-limit");
 // Swagger
 const swaggerUI = require("swagger-ui-express");
 const YAML = require("yamljs");
-const swaggerDocument = YAML.load("./swagger.yaml");
+// const swaggerDocument = YAML.load("./swagger.yaml");
 
 const express = require("express");
 const app = express();
@@ -36,20 +36,8 @@ app.use(helmet());
 app.use(cors());
 app.use(xss());
 
-// app.get("/", (req, res) => {
-//   res.send('<h1>Jobs API</h1><a href="/api-docs">Documentation</a>');
-// });
-// app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
-// app.use(express.static("./public"));
-
-app.use(express.static('public'));
-
-// Route handler for the home page
-app.get('/', (req, res) => {
-  // Render the index.html file in the public directory
-  res.sendFile('index.html', { root: __dirname + '/public' });
-});
+app.use(express.static("./public"));
 
 // routes
 app.use("/api/v1/auth", authRouter);
@@ -58,7 +46,7 @@ app.use("/api/v1/jobs", authenticateUser, jobsRouter);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 const start = async () => {
   try {
