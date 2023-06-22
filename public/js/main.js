@@ -78,5 +78,3 @@
     });
     
 })(jQuery);
-
-// git remote set-url origin <new-remote-url>
