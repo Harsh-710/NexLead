@@ -34,7 +34,7 @@ app.use(helmet());
 app.use(cors());
 app.use(xss());
 
-// app.use(express.static("./public"));
+app.use(express.static("./public"));
 
 // routes
 app.get('/', (req,res) => {
