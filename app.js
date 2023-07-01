@@ -34,13 +34,13 @@ app.use(helmet());
 app.use(cors());
 app.use(xss());
 
-
 // app.use(express.static("./public"));
 
 // routes
 app.get('/', (req,res) => {
   res.send('jobs api')
 })
+
 app.use("/api/auth", authRouter);
 app.use("/api/jobs", authenticateUser, jobsRouter);
 
