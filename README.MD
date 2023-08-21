@@ -18,7 +18,7 @@ These variables are essential for the proper functioning of the project. Make su
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your/repository.git
+git clone https://github.com/Harsh-710/NexLead.git
 ```
 2. Install dependencies:
 ```bash
